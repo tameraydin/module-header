@@ -1,0 +1,51 @@
+{
+  "name": "module-header",
+  "version": "0.1.0",
+  "description": "Adds an auto-generated header to your module files",
+  "bin": {
+    "mh": "cli.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "watch": "onchange 'index.js' 'test.js' -- npm run validate",
+    "validate": "eslint src && ava || true",
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tameraydin/module-header.git"
+  },
+  "keywords": [
+    "header",
+    "info",
+    "comment",
+    "license",
+    "package"
+  ],
+  "author": "Tamer Aydin (http://tamerayd.in)",
+  "contributors": [
+    {
+      "name": "Tamer Aydin",
+      "url": "http://tamerayd.in"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tameraydin/module-header/issues"
+  },
+  "homepage": "https://github.com/tameraydin/module-header",
+  "devDependencies": {
+    "ava": "^0.11.0",
+    "babel-eslint": "^5.0.0",
+    "eslint": "^2.1.0",
+    "nyc": "^5.6.0",
+    "onchange": "^2.0.0"
+  },
+  "dependencies": {
+    "glob": "^7.0.0",
+    "meow": "^3.7.0",
+    "through2": "^2.0.1"
+  }
+}
