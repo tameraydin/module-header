@@ -1,14 +1,34 @@
 # module-header [![Build Status](http://img.shields.io/travis/tameraydin/module-header/master.svg?style=flat-square)](https://travis-ci.org/tameraydin/module-header)
 
-A CLI tool that generates an info header from your module's package.json and prepends it to the given file(s).
+A tool that generates an info header from your module's package.json and prepends it to the given file(s).
 
 ## Install
 
 ```
-npm install -g module-header
+$ npm install --save-dev module-header
 ```
 
 ## Usage
+
+```js
+const header = require('module-header');
+const pkg = require('./package.json')
+
+header('dist/**/*.js', pkg);
+```
+
+## CLI
+
+```
+$ npm install --global module-header
+```
+```
+  Usage:
+    $ header <file-pattern-1[, file-pattern-n]> <[custom-template]>
+
+  Example:
+    $ header dist/*.js
+```
 
 ## License
 
