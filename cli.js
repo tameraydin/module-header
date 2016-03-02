@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 'use strict';
 const meow = require('meow');
-const mh = require('./');
+const header = require('./');
 
 const cli = meow(`
   Usage:
-    $ mh <file pattern 1> <file pattern 2> ...
+    $ header <file-pattern-1[, file-pattern-n]> <[custom-template]>
 
   Example:
-    $ mh dist/*.js
+    $ header dist/*.js
 `);
 
 if (!cli.input.length) {
@@ -16,5 +16,7 @@ if (!cli.input.length) {
   process.exit(1);
 }
 
-mh(cli.input.length > 1 ?
-  '{' + cli.input.join(',') + '}' : cli.input[0], cli.pkg);
+let pattern = cli.input[0];
+
+header(pattern.split(',').length > 1 ?
+  '{' + pattern + '}' : pattern, cli.pkg, cli.input[1] || null);
