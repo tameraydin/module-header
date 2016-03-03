@@ -14,9 +14,11 @@ $ npm install --save-dev module-header
 const header = require('module-header');
 const pkg = require('./package.json')
 
-header('dist/**/*.js', pkg);
+header('dist/**/*.js', pkg)
 // optionally pass your custom template string:
-// header('*.js', pkg, `-- ${pkg.name} --`);
+// header('*.js', pkg, `-- ${pkg.name} --`)
+  .then(...)
+  .catch(...);
 ```
 
 ## CLI
