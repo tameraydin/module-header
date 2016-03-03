@@ -46,6 +46,7 @@
   "dependencies": {
     "map-stream": "0.0.6",
     "meow": "^3.7.0",
+    "pinkie-promise": "^2.0.0",
     "vinyl-fs": "^2.4.1"
   }
 }

@@ -16,4 +16,11 @@ if (!cli.input.length) {
   process.exit(1);
 }
 
-header(cli.input, cli.pkg, null);
+header(cli.input, cli.pkg, null)
+  .then(() => {
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
