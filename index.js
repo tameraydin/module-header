@@ -2,7 +2,7 @@
 const map = require('map-stream');
 const vfs = require('vinyl-fs');
 
-const errHandler = function(err) {
+const errHandler = (err) => {
   console.error(err);
   process.exit(1);
 };
