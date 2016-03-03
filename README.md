@@ -15,6 +15,8 @@ const header = require('module-header');
 const pkg = require('./package.json')
 
 header('dist/**/*.js', pkg);
+// optionally pass your custom template string:
+// header('*.js', pkg, `-- ${pkg.name} --`);
 ```
 
 ## CLI
@@ -24,7 +26,7 @@ $ npm install --global module-header
 ```
 ```
   Usage:
-    $ header <file-pattern-1[, file-pattern-n]> <[custom-template]>
+    $ header <file-glob-1> <file-glob-2>...
 
   Example:
     $ header dist/*.js

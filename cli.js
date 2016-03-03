@@ -5,18 +5,15 @@ const header = require('./');
 
 const cli = meow(`
   Usage:
-    $ header <file-pattern-1[, file-pattern-n]> <[custom-template]>
+    $ header <file-glob-1> <file-glob-2>...
 
   Example:
     $ header dist/*.js
 `);
 
 if (!cli.input.length) {
-  console.error('No file pattern(s) provided');
+  console.error('No file glob provided');
   process.exit(1);
 }
 
-let pattern = cli.input[0];
-
-header(pattern.split(',').length > 1 ?
-  '{' + pattern + '}' : pattern, cli.pkg, cli.input[1] || null);
+header(cli.input, cli.pkg, null);
