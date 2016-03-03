@@ -1,6 +1,6 @@
 {
   "name": "module-header",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Adds an auto-generated header to your module files",
   "bin": {
     "header": "cli.js"
