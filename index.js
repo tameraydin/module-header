@@ -5,7 +5,7 @@ const Promise = require('pinkie-promise');
 
 module.exports = (globs, pkg, customTemplate) => {
   return new Promise((resolve, reject) => {
-    vfs.src(globs)
+    vfs.src(globs, {base: './'})
       .on('error', (err) => reject(err))
       .pipe(map((file, cb) => {
         file.contents = new Buffer((typeof customTemplate === 'string' ? customTemplate :
