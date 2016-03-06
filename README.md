@@ -28,10 +28,10 @@ $ npm install --global module-header
 ```
 ```
   Usage:
-    $ header <file-glob-1> <file-glob-2>...
+    $ header <file-glob(s)>
 
   Example:
-    $ header dist/*.js
+    $ header dist/**/* src/*.js
 ```
 
 ## License
