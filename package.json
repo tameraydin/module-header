@@ -1,6 +1,6 @@
 {
   "name": "module-header",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Adds an auto-generated header to your module files",
   "bin": {
     "header": "cli.js"
@@ -48,6 +48,7 @@
     "map-stream": "0.0.6",
     "meow": "^3.7.0",
     "pinkie-promise": "^2.0.0",
+    "pkg-up": "^1.0.0",
     "vinyl-fs": "^2.4.1"
   }
 }

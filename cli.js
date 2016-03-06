@@ -3,22 +3,20 @@
 const meow = require('meow');
 const header = require('./');
 
-const cli = meow({
-  pkg: './../../package.json', // <= your-module/node_modules/module-header
-  help: `
+const cli = meow(`
   Usage:
-    $ header <file-glob-1> <file-glob-2>...
+    $ header <file-glob(s)>
 
   Example:
-    $ header dist/*.js
-`});
+    $ header dist/**/* src/*.js
+`);
 
 if (!cli.input.length) {
   console.error('No file glob provided');
   process.exit(1);
 }
 
-header(cli.input, cli.pkg, null)
+header(cli.input)
   .then(() => {
     process.exit(0);
   })
