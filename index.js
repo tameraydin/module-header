@@ -7,7 +7,8 @@ const Promise = require('pinkie-promise');
 
 const write = function(file, pkg, customTemplate, cb) {
   file.contents = new Buffer((typeof customTemplate === 'string' ? customTemplate :
-`/**
+`/*!
+ * @license
  * ${pkg.name} v${pkg.version} ${pkg.homepage ? '(' + pkg.homepage + ')' : ''}
  * Copyright ${(new Date()).getFullYear()} ${pkg.author ? (typeof pkg.author === 'string' ? pkg.author : (pkg.author.name || '')) : ''} ${pkg.author && pkg.author.url ? '(' + pkg.author.url + ')' : ''}
 ${pkg.license ? ' * Licensed under ' + pkg.license + `\n */` : ` */`}
